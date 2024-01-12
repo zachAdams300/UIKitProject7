@@ -22,23 +22,25 @@ class ViewController: UITableViewController {
         let filterButton = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: #selector(didTapFilterButton))
         navigationItem.rightBarButtonItems = [creditsButton, filterButton]
         
-        let urlString: String
-        if navigationController?.tabBarItem.tag == 0 {
-            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
-        }else {
-            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
-        }
+//        let urlString: String
+//        if navigationController?.tabBarItem.tag == 0 {
+//            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+//        }else {
+//            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+//        }
+//
+//        DispatchQueue.global(qos: .userInitiated).async {
+//            if let url = URL(string: urlString) {
+//                if let data = try? Data(contentsOf: url) {
+//                    self.parse(json: data)
+//                    return
+//                }
+//            }
+//
+//            self.showError()
+//        }
         
-        DispatchQueue.global(qos: .userInitiated).async {
-            if let url = URL(string: urlString) {
-                if let data = try? Data(contentsOf: url) {
-                    self.parse(json: data)
-                    return
-                }
-            }
-            
-            self.showError()
-        }
+        fetchJsonAlamo()
     }
     
     @objc func fetchJSON() {
@@ -57,6 +59,26 @@ class ViewController: UITableViewController {
         }
         
         performSelector(onMainThread: #selector(showError), with: nil, waitUntilDone: false)
+    }
+    
+    @objc func fetchJsonAlamo() {
+        let urlString: String
+        if navigationController?.tabBarItem.tag == 0 {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        }else {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+        }
+        
+        NetworkManager.shared.request(urlString, method: .get) { (result: Result<PetitionList, Error>) in
+            switch result {
+            case .success(let petitionList):
+                self.petitions = petitionList.results
+                self.filteredPetitions = self.petitions
+                self.tableView.reloadData()
+            case .failure(_):
+                self.showError()
+            }
+        }
     }
     
     @objc func didTapCreditsButton() {

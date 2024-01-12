@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		491FF6D1EC2288E6D0FD89B3 /* Pods_UIKitProject7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ED8F552A13C5B6856DE4B4 /* Pods_UIKitProject7.framework */; };
 		8CBDA9832B50609D0060A9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9822B50609D0060A9A9 /* AppDelegate.swift */; };
 		8CBDA9852B50609D0060A9A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9842B50609D0060A9A9 /* SceneDelegate.swift */; };
 		8CBDA9872B50609D0060A9A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9862B50609D0060A9A9 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 		8CBDA9972B507D160060A9A9 /* Petition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9962B507D160060A9A9 /* Petition.swift */; };
 		8CBDA9992B50879B0060A9A9 /* PetitionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9982B50879B0060A9A9 /* PetitionList.swift */; };
 		8CBDA99B2B508ACB0060A9A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA99A2B508ACB0060A9A9 /* DetailViewController.swift */; };
+		8CBDAA2D2B51E9BD0060A9A9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDAA2C2B51E9BD0060A9A9 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,10 @@
 		8CBDA9962B507D160060A9A9 /* Petition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petition.swift; sourceTree = "<group>"; };
 		8CBDA9982B50879B0060A9A9 /* PetitionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PetitionList.swift; sourceTree = "<group>"; };
 		8CBDA99A2B508ACB0060A9A9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		8CBDAA2C2B51E9BD0060A9A9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A2ED8F552A13C5B6856DE4B4 /* Pods_UIKitProject7.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitProject7.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A790FF5752C1E02A1B20204F /* Pods-UIKitProject7.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitProject7.release.xcconfig"; path = "Target Support Files/Pods-UIKitProject7/Pods-UIKitProject7.release.xcconfig"; sourceTree = "<group>"; };
+		FAFD25BF97A389960D1A739C /* Pods-UIKitProject7.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitProject7.debug.xcconfig"; path = "Target Support Files/Pods-UIKitProject7/Pods-UIKitProject7.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				491FF6D1EC2288E6D0FD89B3 /* Pods_UIKitProject7.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E9CC5689E92064023FE0F26 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD25BF97A389960D1A739C /* Pods-UIKitProject7.debug.xcconfig */,
+				A790FF5752C1E02A1B20204F /* Pods-UIKitProject7.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		8CBDA9762B50609D0060A9A9 = {
 			isa = PBXGroup;
 			children = (
 				8CBDA9812B50609D0060A9A9 /* UIKitProject7 */,
 				8CBDA9802B50609D0060A9A9 /* Products */,
+				2E9CC5689E92064023FE0F26 /* Pods */,
+				E6028203EE43EF111E11955B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,8 +90,17 @@
 				8CBDA98B2B50609E0060A9A9 /* Assets.xcassets */,
 				8CBDA98D2B50609E0060A9A9 /* LaunchScreen.storyboard */,
 				8CBDA9902B50609E0060A9A9 /* Info.plist */,
+				8CBDAA2C2B51E9BD0060A9A9 /* NetworkManager.swift */,
 			);
 			path = UIKitProject7;
+			sourceTree = "<group>";
+		};
+		E6028203EE43EF111E11955B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2ED8F552A13C5B6856DE4B4 /* Pods_UIKitProject7.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8CBDA9932B50609E0060A9A9 /* Build configuration list for PBXNativeTarget "UIKitProject7" */;
 			buildPhases = (
+				A6C87840C98DDB3CD97A880A /* [CP] Check Pods Manifest.lock */,
 				8CBDA97B2B50609D0060A9A9 /* Sources */,
 				8CBDA97C2B50609D0060A9A9 /* Frameworks */,
 				8CBDA97D2B50609D0060A9A9 /* Resources */,
+				BB9451F2C9EFBE1E6163F7B1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +171,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A6C87840C98DDB3CD97A880A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-UIKitProject7-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB9451F2C9EFBE1E6163F7B1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKitProject7/Pods-UIKitProject7-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-UIKitProject7/Pods-UIKitProject7-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-UIKitProject7/Pods-UIKitProject7-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8CBDA97B2B50609D0060A9A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,6 +221,7 @@
 				8CBDA9872B50609D0060A9A9 /* ViewController.swift in Sources */,
 				8CBDA9972B507D160060A9A9 /* Petition.swift in Sources */,
 				8CBDA9992B50879B0060A9A9 /* PetitionList.swift in Sources */,
+				8CBDAA2D2B51E9BD0060A9A9 /* NetworkManager.swift in Sources */,
 				8CBDA99B2B508ACB0060A9A9 /* DetailViewController.swift in Sources */,
 				8CBDA9832B50609D0060A9A9 /* AppDelegate.swift in Sources */,
 				8CBDA9852B50609D0060A9A9 /* SceneDelegate.swift in Sources */,
@@ -294,6 +366,7 @@
 		};
 		8CBDA9942B50609E0060A9A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FAFD25BF97A389960D1A739C /* Pods-UIKitProject7.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -321,6 +394,7 @@
 		};
 		8CBDA9952B50609E0060A9A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A790FF5752C1E02A1B20204F /* Pods-UIKitProject7.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
