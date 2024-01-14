@@ -40,7 +40,9 @@ class ViewController: UITableViewController {
 //            self.showError()
 //        }
         
-        fetchJsonAlamo()
+//        fetchJsonAlamo()
+//        fetchJsonUrlSession()
+        fetchJsonUrlSessionManager()
     }
     
     @objc func fetchJSON() {
@@ -78,6 +80,68 @@ class ViewController: UITableViewController {
             case .failure(_):
                 self.showError()
             }
+        }
+    }
+    
+    @objc func fetchJsonUrlSessionManager() {
+        let urlString: String
+        if navigationController?.tabBarItem.tag == 0 {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        }else {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+        }
+        
+        if let url = URL(string: urlString) {
+            URLSessionManager.shared.fetchData(url: url) { (result: Result<PetitionList, Error>) in
+                switch result {
+                case .success(let petitionList):
+                    self.petitions = petitionList.results
+                    self.filteredPetitions = self.petitions
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                case .failure(_):
+                    self.showError()
+                }
+            }
+        }
+    }
+
+    
+    @objc func fetchJsonUrlSession() {
+        let urlString: String
+        if navigationController?.tabBarItem.tag == 0 {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
+        }else {
+            urlString = "https://www.hackingwithswift.com/samples/petitions-2.json"
+        }
+        
+        if let url = URL(string: urlString) {
+            let request = try! URLRequest(url: url, method: .get)
+            
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                do {
+                    guard let data = data, let response = response as? HTTPURLResponse, (200 ..< 300) ~= response.statusCode, error == nil else {
+                        //Data was nil, validation failed, or an error occured
+                        throw error ?? NSError(domain: "", code: 400)
+                    }
+                    
+                    let peeps = try JSONDecoder().decode(PetitionList.self, from: data)
+                    self.petitions = peeps.results
+                    self.filteredPetitions = self.petitions
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    
+                }catch {
+                    print("ERROR ERROR")
+                }
+            }.resume()
+        }else {
+            print("Error making URL")
         }
     }
     

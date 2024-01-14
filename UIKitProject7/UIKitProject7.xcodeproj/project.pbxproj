@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		491FF6D1EC2288E6D0FD89B3 /* Pods_UIKitProject7.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2ED8F552A13C5B6856DE4B4 /* Pods_UIKitProject7.framework */; };
+		8C4DC4EC2B53763E000B8A28 /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DC4EB2B53763E000B8A28 /* URLSessionManager.swift */; };
 		8CBDA9832B50609D0060A9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9822B50609D0060A9A9 /* AppDelegate.swift */; };
 		8CBDA9852B50609D0060A9A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9842B50609D0060A9A9 /* SceneDelegate.swift */; };
 		8CBDA9872B50609D0060A9A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBDA9862B50609D0060A9A9 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C4DC4EB2B53763E000B8A28 /* URLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
 		8CBDA97F2B50609D0060A9A9 /* UIKitProject7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitProject7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CBDA9822B50609D0060A9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CBDA9842B50609D0060A9A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				8CBDA9822B50609D0060A9A9 /* AppDelegate.swift */,
 				8CBDA9842B50609D0060A9A9 /* SceneDelegate.swift */,
 				8CBDA9862B50609D0060A9A9 /* ViewController.swift */,
+				8C4DC4EB2B53763E000B8A28 /* URLSessionManager.swift */,
 				8CBDA99A2B508ACB0060A9A9 /* DetailViewController.swift */,
 				8CBDA9962B507D160060A9A9 /* Petition.swift */,
 				8CBDA9982B50879B0060A9A9 /* PetitionList.swift */,
@@ -222,6 +225,7 @@
 				8CBDA9972B507D160060A9A9 /* Petition.swift in Sources */,
 				8CBDA9992B50879B0060A9A9 /* PetitionList.swift in Sources */,
 				8CBDAA2D2B51E9BD0060A9A9 /* NetworkManager.swift in Sources */,
+				8C4DC4EC2B53763E000B8A28 /* URLSessionManager.swift in Sources */,
 				8CBDA99B2B508ACB0060A9A9 /* DetailViewController.swift in Sources */,
 				8CBDA9832B50609D0060A9A9 /* AppDelegate.swift in Sources */,
 				8CBDA9852B50609D0060A9A9 /* SceneDelegate.swift in Sources */,
